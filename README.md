@@ -21,7 +21,7 @@ pod 'AmountView'
 
 ## Author
 
-MarceloJoseML, marcelo.jose@mercadolibre.com
+MarceloOscarJoseML, marcelo.oscar.jose@gmail.com
 
 ## License
 

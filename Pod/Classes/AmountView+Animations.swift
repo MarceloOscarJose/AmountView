@@ -10,7 +10,7 @@ import UIKit
 
 extension AmountView {
 
-    func animateInvalid() {
+    func invalidAnimate() {
         switch self.configuration.invalidAnimation {
             case .none: break
             case .shake: self.shake()

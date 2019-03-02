@@ -43,7 +43,7 @@ extension AmountView: UITextFieldDelegate {
         let newNumber = self.formatedAmount(amount: self.getNumberDigits(digit))
 
         if self.configuration.maxEnabledValue.isLess(than: newNumber) || (newNumber.isEqual(to: 0) && digit == 0) {
-            self.animateInvalid()
+            self.invalidAnimate()
             return
         }
 
@@ -67,7 +67,7 @@ extension AmountView: UITextFieldDelegate {
         let number = self.getAmount()
 
         if number == 0 {
-            self.animateInvalid()
+            self.invalidAnimate()
             return
         }
 

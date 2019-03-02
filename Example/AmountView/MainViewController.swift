@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var horizontalAlign: UISegmentedControl!
     @IBOutlet weak var invalidColor: UITextField!
     @IBOutlet weak var normalColor: UITextField!
-    
+
     var amountView: AmountView!
 
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
             amountViewConfigurtion.decimals = Int(decimalsText)!
             amountViewConfigurtion.maxDigitFontSize = CGFloat(Int(maxFontSizeText)!)
             amountViewConfigurtion.digitFont = UIFont.systemFont(ofSize: 120, weight: .light)
-            amountViewConfigurtion.superScriptDigitFont = UIFont.systemFont(ofSize: 60, weight: .light)
+            amountViewConfigurtion.superScriptDigitFont = UIFont.systemFont(ofSize: 60, weight: .regular)
             amountViewConfigurtion.maxEnabledValue = Decimal(string: maxValueText)!
             amountViewConfigurtion.minEnabledValue = Decimal(string: minValueText)!
             amountViewConfigurtion.horizontalAlign = horizontalAlign.selectedSegmentIndex == 0 ? .center : horizontalAlign.selectedSegmentIndex == 1 ? .left : .right

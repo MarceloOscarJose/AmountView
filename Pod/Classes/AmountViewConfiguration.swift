@@ -23,8 +23,8 @@ open class AmountViewConfiguration: NSObject {
     public var maxEnabledValue: Decimal = 1000
 
     public var maxDigitFontSize: CGFloat = 120
-    public var digitFont: UIFont = UIFont.systemFont(ofSize: 120)
-    public var superScriptDigitFont: UIFont = UIFont.systemFont(ofSize: 60)
+    public var digitFont: UIFont = UIFont.systemFont(ofSize: 120, weight: .light)
+    public var superScriptDigitFont: UIFont = UIFont.systemFont(ofSize: 60, weight: .regular)
 
     public var invalidDigitColor: UIColor = UIColor.lightGray
     public var normnalDigitColor: UIColor = UIColor.black

@@ -46,7 +46,7 @@ extension AmountView: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         for _ in 0...Int(self.configuration.maxDigitFontSize) {
             let currentWidth = self.digits.map({ (self.sizeCache[$0]?.width)! * fontSize }).reduce(0, +) + ((self.sizeCache[self.configuration.prefix]?.width)! * (fontSize / 2))
             let currentHeight = (self.sizeCache["0"]?.height)! * fontSize
-            
+
             if currentWidth < self.digitsCollectionView.frame.width && currentHeight < self.digitsCollectionView.frame.height {
                 break;
             }

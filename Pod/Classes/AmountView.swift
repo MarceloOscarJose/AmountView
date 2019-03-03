@@ -14,7 +14,7 @@ public class AmountView: UIView {
     var configuration: AmountViewConfiguration!
 
     // Behaviour vars
-    var digitFontSize: CGFloat = 120
+    var maxDigitFontSize: CGFloat = 120
     var contentSize: CGSize = CGSize(width: 0, height: 0)
     var digits: [String] = []
     var validChars: [String] = []
@@ -50,7 +50,7 @@ public class AmountView: UIView {
         self.setupConstraints()
 
         self.createValidChars()
-        self.digitFontSize = configuration.maxDigitFontSize
+        self.maxDigitFontSize = configuration.maxDigitFontSize
         self.setAmount(amount: configuration.initialValue)
 
         self.createImageCache()

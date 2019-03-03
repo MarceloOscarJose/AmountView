@@ -24,7 +24,7 @@ extension AmountView: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         let isSuperScript = self.isSuperScript(index: indexPath)
 
         if let digitImage = isSuperScript ? self.scriptImageCache[digit] : self.imageCache[digit], let digitSize = self.sizeCache[digit] {
-            cell.setupCell(digitImage: digitImage, stringDigit: digit, isSuperDigit: isSuperScript, height: digitSize.height * self.digitFontSize)
+            cell.setupCell(digitImage: digitImage, stringDigit: digit, isSuperDigit: isSuperScript, height: digitSize.height * self.maxDigitFontSize)
             cell.digitImageView.tintColor = self.isValidAmount() ? self.configuration.normnalDigitColor : self.configuration.invalidDigitColor
         }
 
@@ -57,7 +57,7 @@ extension AmountView: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             cell.isSuperDigit = isSuperDigit
         }
 
-        self.digitFontSize = fontSize
+        self.maxDigitFontSize = fontSize
 
         if let frame = self.sizeCache[digit] {
             let frameWidth = frame.width * (isSuperDigit ? fontSize / 2 : fontSize)

@@ -130,7 +130,7 @@ extension AmountView: UITextFieldDelegate {
 
             if let height = self.sizeCache[currentCell.stringDigit]?.height {
                 if let imageDigit = currentCell.isSuperDigit ? self.scriptImageCache[currentCell.stringDigit] : self.imageCache[currentCell.stringDigit] {
-                    currentCell.updateFrames(height: height * self.digitFontSize, digitImage: imageDigit)
+                    currentCell.updateFrames(height: height * self.maxDigitFontSize, digitImage: imageDigit)
                     currentCell.digitImageView.tintColor = self.isValidAmount() ? self.configuration.normnalDigitColor : self.configuration.invalidDigitColor
                 }
             }

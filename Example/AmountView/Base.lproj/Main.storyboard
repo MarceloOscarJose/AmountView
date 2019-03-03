@@ -215,9 +215,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="d4F-RS-QGd" secondAttribute="bottom" constant="20" id="Lll-Rr-b3P"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="d4F-RS-QGd" secondAttribute="trailing" constant="10" id="dPs-VZ-4QD"/>
-                            <constraint firstItem="d4F-RS-QGd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="e1n-IB-9cr"/>
+                            <constraint firstItem="d4F-RS-QGd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="7Yd-EC-htx"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="d4F-RS-QGd" secondAttribute="bottom" constant="20" id="ToN-Pg-jrp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d4F-RS-QGd" secondAttribute="trailing" constant="10" id="kFO-MF-hip"/>
                         </constraints>
                     </view>
                     <connections>

@@ -17,7 +17,7 @@ open class AmountViewConfiguration: NSObject {
 
     public var prefix: String = "$"
     public var thousandSeparator = "."
-    public var decimals: Int = 0
+    public var decimals: Int = 2
     public var initialValue: Decimal = 0
     public var minEnabledValue: Decimal = 0
     public var maxEnabledValue: Decimal = 1000

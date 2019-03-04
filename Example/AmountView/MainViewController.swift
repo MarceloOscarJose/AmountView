@@ -9,7 +9,7 @@
 import AmountView
 import PureLayout
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, AmountViewDelegate {
 
     @IBOutlet weak var configurationStack: UIStackView!
     @IBOutlet weak var minValue: UITextField!
@@ -39,6 +39,8 @@ class MainViewController: UIViewController {
         amountView.layer.borderWidth = 1
         amountView.layer.borderColor = UIColor.black.cgColor
         applyButton.addTarget(self, action: #selector(appleyChanges), for: .touchUpInside)
+
+        amountView.delegate = self
     }
 
     func getConfigs() -> AmountViewConfiguration {
@@ -94,5 +96,17 @@ class MainViewController: UIViewController {
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
+    }
+
+    func didAppendDigit() {
+        print("Append digit")
+    }
+
+    func didDeleteDigit() {
+        print("Deleted digit")
+    }
+
+    func minAmountInvalid() {
+        print("Is min value wrong")
     }
 }

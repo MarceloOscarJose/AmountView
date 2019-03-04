@@ -52,5 +52,4 @@ public protocol AmountViewDelegate {
     func didAppendDigit()
     func didDeleteDigit()
     func minAmountInvalid()
-    func maxAmountInvalid()
 }

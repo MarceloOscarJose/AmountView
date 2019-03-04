@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class AmountView: UIView {
+public class AmountView: UIView, AmountViewDelegate {
 
-    var delegate: AmountViewDelegate?
+    public var delegate: AmountViewDelegate!
     var configuration: AmountViewConfiguration!
 
     // Behaviour vars
@@ -32,6 +32,7 @@ public class AmountView: UIView {
 
     public convenience init(configuration: AmountViewConfiguration) {
         self.init(frame: .zero)
+        self.delegate = self
         self.loadConfiguration(configuration: configuration)
     }
 
@@ -74,9 +75,10 @@ public class AmountView: UIView {
         return self.formatedAmount(amount: self.digits)
     }
 
-    public func isValidAmount() -> Bool {
+    public func isMinValidAmount() -> Bool {
         let number = self.getAmount()
-        if number.isLess(than: self.configuration.minEnabledValue) || self.configuration.maxEnabledValue.isLess(than: number) {
+        if number.isLess(than: self.configuration.minEnabledValue) {
+            delegate.minAmountInvalid()
             return false
         }
 
@@ -154,5 +156,22 @@ public class AmountView: UIView {
         for digit in 0...9 {
             self.validChars.append(digit.description)
         }
+    }
+
+    // Mark: Delegate
+    public func didAppendDigit() {
+        // Override on delegate
+    }
+
+    public func didDeleteDigit() {
+        // Override on delegate
+    }
+
+    public func minAmountInvalid() {
+        // Override on delegate
+    }
+
+    public func maxAmountInvalid() {
+        // Override on delegate
     }
 }

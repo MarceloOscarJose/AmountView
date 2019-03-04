@@ -45,6 +45,7 @@ extension AmountView: UITextFieldDelegate {
             return
         }
 
+        delegate.didAppendDigit()
         self.digits = self.getNumberDigits(digit)
         self.insertedDigits += 1
 
@@ -66,6 +67,10 @@ extension AmountView: UITextFieldDelegate {
         if number.isEqual(to: 0) {
             self.invalidAnimate()
             return
+        }
+
+        if let delegate = self.delegate {
+            delegate.didDeleteDigit()
         }
 
         self.insertedDigits -= 1
@@ -90,7 +95,7 @@ extension AmountView: UITextFieldDelegate {
                 if let height = self.sizeCache[currentCell.stringDigit]?.height {
                     if let imageDigit = currentCell.isSuperDigit ? self.scriptImageCache[currentCell.stringDigit] : self.imageCache[currentCell.stringDigit] {
                         currentCell.updateFrames(height: height * self.maxDigitFontSize, digitImage: imageDigit)
-                        currentCell.digitImageView.tintColor = self.isValidAmount() ? self.configuration.normalDigitColor : self.configuration.invalidDigitColor
+                        currentCell.digitImageView.tintColor = self.isMinValidAmount() ? self.configuration.normalDigitColor : self.configuration.invalidDigitColor
                     }
                 }
             }

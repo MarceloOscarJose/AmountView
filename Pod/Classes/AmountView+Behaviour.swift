@@ -70,14 +70,11 @@ extension AmountView: UITextFieldDelegate {
         }
 
         self.insertedDigits -= 1
-
         self.digits.removeLast()
-        let numberCount = self.digits.count + 1
-        let digitsCount = self.digits.count
+        self.performDelete(deletePath: self.digits.count + 1)
 
-        self.performDelete(deletePath: numberCount)
+        if self.digits.count <= self.configuration.decimals {
 
-        if digitsCount <= self.configuration.decimals {
             let insertZero = 1 + self.configuration.decimals - self.insertedDigits
             self.digits.insert("\(0)", at: insertZero - 1)
             self.performInsert(insertPath: insertZero)

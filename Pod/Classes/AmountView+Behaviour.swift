@@ -37,7 +37,6 @@ extension AmountView: UITextFieldDelegate {
 
     public func appendDigit(_ digit: Int) {
 
-        let digitsCount = self.digits.count
         let numberCount = self.digitsCollectionView.visibleCells.count
         let newNumber = self.formatedAmount(amount: self.getNumberDigits(digit))
 
@@ -50,12 +49,12 @@ extension AmountView: UITextFieldDelegate {
         self.insertedDigits += 1
 
         if self.insertedDigits < numberCount {
-            self.performUpdate(deletePath: numberCount - self.insertedDigits, insertPath: digitsCount)
+            self.performUpdate(deletePath: numberCount - self.insertedDigits, insertPath: self.digits.count)
         } else {
             self.performUpdate(deletePath: 0, insertPath: numberCount)
         }
 
-        if self.configuration.decimals > 0 && self.insertedDigits >= digitsCount {
+        if self.configuration.decimals > 0 && self.insertedDigits >= self.digits.count {
             self.performMove(at: self.insertedDigits, to: self.insertedDigits)
         }
     }

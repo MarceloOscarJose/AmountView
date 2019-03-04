@@ -130,6 +130,8 @@ public class AmountView: UIView {
             self.hiddenTextField.keyboardType = .decimalPad
             self.hiddenTextField.becomeFirstResponder()
             self.addSubview(hiddenTextField)
+
+            digitsCollectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showKeyaboard)))
         }
     }
 
@@ -139,6 +141,11 @@ public class AmountView: UIView {
         hiddenTextField.topAnchor.constraint(equalTo: self.topAnchor)
         hiddenTextField.leftAnchor.constraint(equalTo: self.leftAnchor)
         digitsCollectionView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+    }
+
+    @objc fileprivate func showKeyaboard() {
+        self.bounce()
+        self.hiddenTextField.becomeFirstResponder()
     }
 
     fileprivate func createValidChars() {

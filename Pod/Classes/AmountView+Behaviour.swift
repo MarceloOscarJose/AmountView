@@ -89,16 +89,18 @@ extension AmountView: UITextFieldDelegate {
 
     func updateCells() {
         DispatchQueue.main.asyncAfter(deadline: .now() + (1.0 / 60.0)) {
-            for cell in self.digitsCollectionView.visibleCells {
-                let currentCell = (cell as! AmountViewCollectionViewCell)
+            let tintColor = self.isMinValidAmount() ? self.configuration.normalDigitColor : self.configuration.invalidDigitColor
+
+            self.digitsCollectionView.visibleCells.forEach({
+                let currentCell = ($0 as! AmountViewCollectionViewCell)
 
                 if let height = self.sizeCache[currentCell.stringDigit]?.height {
                     if let imageDigit = currentCell.isSuperDigit ? self.scriptImageCache[currentCell.stringDigit] : self.imageCache[currentCell.stringDigit] {
                         currentCell.updateFrames(height: height * self.maxDigitFontSize, digitImage: imageDigit)
-                        currentCell.digitImageView.tintColor = self.isMinValidAmount() ? self.configuration.normalDigitColor : self.configuration.invalidDigitColor
+                        currentCell.digitImageView.tintColor = tintColor
                     }
                 }
-            }
+            })
         }
     }
 

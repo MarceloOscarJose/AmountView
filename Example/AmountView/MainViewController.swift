@@ -106,7 +106,7 @@ class MainViewController: UIViewController, AmountViewDelegate {
         print("Deleted digit")
     }
 
-    func minAmountInvalid() {
-        print("Is min value wrong")
+    func didEnterValidAmount() {
+        print("Amount is correct")
     }
 }

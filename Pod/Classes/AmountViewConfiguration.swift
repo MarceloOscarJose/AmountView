@@ -51,5 +51,5 @@ public enum AmountViewInvalidAnimation {
 public protocol AmountViewDelegate {
     func didAppendDigit()
     func didDeleteDigit()
-    func minAmountInvalid()
+    func didEnterValidAmount()
 }

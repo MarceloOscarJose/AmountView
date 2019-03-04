@@ -78,11 +78,17 @@ public class AmountView: UIView, AmountViewDelegate {
     public func isMinValidAmount() -> Bool {
         let number = self.getAmount()
         if number.isLess(than: self.configuration.minEnabledValue) {
-            delegate.minAmountInvalid()
             return false
         }
 
         return true
+    }
+
+    public func validateAmount() {
+        let number = self.getAmount()
+        if !number.isLess(than: self.configuration.minEnabledValue) && !number.isZero {
+            delegate.didEnterValidAmount()
+        }
     }
 
     public func formatedAmount(amount: [String]) -> Decimal {
@@ -171,7 +177,7 @@ public class AmountView: UIView, AmountViewDelegate {
         // Override on delegate
     }
 
-    public func maxAmountInvalid() {
+    public func didEnterValidAmount() {
         // Override on delegate
     }
 }

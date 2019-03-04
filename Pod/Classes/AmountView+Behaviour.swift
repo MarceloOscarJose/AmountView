@@ -36,7 +36,6 @@ extension AmountView: UITextFieldDelegate {
     }
 
     public func appendDigit(_ digit: Int) {
-        self.createTimer()
 
         let digitsCount = self.digits.count
         let numberCount = self.digitsCollectionView.visibleCells.count
@@ -62,76 +61,41 @@ extension AmountView: UITextFieldDelegate {
     }
 
     public func deleteDigit() {
-        self.createTimer()
 
         let number = self.getAmount()
 
-        if number == 0 {
+        if number.isEqual(to: 0) {
             self.invalidAnimate()
             return
         }
 
+        self.insertedDigits -= 1
+
         self.digits.removeLast()
         let numberCount = self.digits.count + 1
         let digitsCount = self.digits.count
-        let position = self.configuration.decimals > 0 ? 1 : 0
 
-        if number < 0.1 {
-            self.digits.insert("\(0)", at: self.digits.count - 1)
+        self.performDelete(deletePath: numberCount)
 
-            let insertPath = numberCount + position - 2
-            self.performUpdate(deletePath: insertPath, insertPath: insertPath)
-        } else if number < 1 {
-            self.digits.insert("\(0)", at: self.digits.count - 2)
+        if digitsCount <= self.configuration.decimals {
+            let insertZero = 1 + self.configuration.decimals - self.insertedDigits
+            self.digits.insert("\(0)", at: insertZero - 1)
+            self.performInsert(insertPath: insertZero)
 
-            let deletePath = numberCount + position - 2
-            let insertPath = numberCount + position - 3
-            self.performUpdate(deletePath: deletePath, insertPath: insertPath)
-        } else if digitsCount < 1 + self.configuration.decimals {
-            self.digits.insert("\(0)", at: 0)
-
-            let deletePath = numberCount + position
-            let insertPath = 1
-
-            self.performUpdate(deletePath: deletePath, insertPath: insertPath)
-
-            if self.configuration.decimals > 0 {
-                let moveAt = numberCount + position - 3
-                let moveTo = numberCount + position - 3
-                self.performMove(at: moveAt, to: moveTo)
-            }
-        } else {
-            self.performDelete(deletePath: numberCount)
-
-            if self.configuration.decimals > 0 {
-                let moveAt = numberCount + position - 3
-                let moveTo = numberCount - 2
-                self.performMove(at: moveAt, to: moveTo)
-            }
+            self.performMove(at: self.insertedDigits, to: self.insertedDigits)
         }
     }
 
-    func createTimer() {
-        if self.timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 1.0 / 60.0, target: self, selector: #selector(self.updateCells), userInfo: nil, repeats: true)
-        }
-    }
+    func updateCells() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + (1.0 / 60.0)) {
+            for cell in self.digitsCollectionView.visibleCells {
+                let currentCell = (cell as! AmountViewCollectionViewCell)
 
-    func invalidateTimer() {
-        if let timer = self.timer {
-            timer.invalidate()
-            self.timer = nil
-        }
-    }
-
-    @objc func updateCells() {
-        for cell in self.digitsCollectionView.visibleCells {
-            let currentCell = (cell as! AmountViewCollectionViewCell)
-
-            if let height = self.sizeCache[currentCell.stringDigit]?.height {
-                if let imageDigit = currentCell.isSuperDigit ? self.scriptImageCache[currentCell.stringDigit] : self.imageCache[currentCell.stringDigit] {
-                    currentCell.updateFrames(height: height * self.maxDigitFontSize, digitImage: imageDigit)
-                    currentCell.digitImageView.tintColor = self.isValidAmount() ? self.configuration.normnalDigitColor : self.configuration.invalidDigitColor
+                if let height = self.sizeCache[currentCell.stringDigit]?.height {
+                    if let imageDigit = currentCell.isSuperDigit ? self.scriptImageCache[currentCell.stringDigit] : self.imageCache[currentCell.stringDigit] {
+                        currentCell.updateFrames(height: height * self.maxDigitFontSize, digitImage: imageDigit)
+                        currentCell.digitImageView.tintColor = self.isValidAmount() ? self.configuration.normalDigitColor : self.configuration.invalidDigitColor
+                    }
                 }
             }
         }
@@ -140,27 +104,27 @@ extension AmountView: UITextFieldDelegate {
     func performInsert(insertPath: Int) {
         digitsCollectionView.performBatchUpdates({
             digitsCollectionView.insertItems(at: [IndexPath(row: insertPath, section: 0)])
-            //self.updateCells()
+            self.updateCells()
         }) { (_) in
-            //self.updateCells()
+            self.updateCells()
         }
     }
 
     func performDelete(deletePath: Int) {
         digitsCollectionView.performBatchUpdates({
             digitsCollectionView.deleteItems(at: [IndexPath(row: deletePath, section: 0)])
-            //self.updateCells()
+            self.updateCells()
         }) { (_) in
-            //self.updateCells()
+            self.updateCells()
         }
     }
 
     func performMove(at: Int, to: Int) {
         digitsCollectionView.performBatchUpdates({
             digitsCollectionView.moveItem(at: IndexPath(row: at, section: 0), to: IndexPath(row: to, section: 0))
-            //self.updateCells()
+            self.updateCells()
         }) { (_) in
-            //self.updateCells()
+            self.updateCells()
         }
     }
 
@@ -168,11 +132,12 @@ extension AmountView: UITextFieldDelegate {
         digitsCollectionView.performBatchUpdates({
             if deletePath > 0 {
                 digitsCollectionView.deleteItems(at: [IndexPath(row: deletePath, section: 0)])
+                self.updateCells()
             }
             digitsCollectionView.insertItems(at: [IndexPath(row: insertPath, section: 0)])
-            //self.updateCells()
+            self.updateCells()
         }) { (_) in
-            //self.updateCells()
+            self.updateCells()
         }
     }
 }

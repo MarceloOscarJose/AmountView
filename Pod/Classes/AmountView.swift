@@ -21,7 +21,6 @@ public class AmountView: UIView {
     var sizeCache: [String: CGSize] = [:]
     var imageCache: [String: UIImage] = [:]
     var scriptImageCache: [String: UIImage] = [:]
-    var timer: Timer?
     var insertedDigits: Int = 0
 
     // Constants

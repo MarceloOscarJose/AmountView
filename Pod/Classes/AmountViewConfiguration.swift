@@ -27,7 +27,7 @@ open class AmountViewConfiguration: NSObject {
     public var superScriptDigitFont: UIFont = UIFont.systemFont(ofSize: 60, weight: .regular)
 
     public var invalidDigitColor: UIColor = UIColor.lightGray
-    public var normnalDigitColor: UIColor = UIColor.black
+    public var normalDigitColor: UIColor = UIColor.black
 }
 
 public enum AmountViewVerticalAlign {

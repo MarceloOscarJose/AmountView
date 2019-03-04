@@ -65,7 +65,7 @@ class MainViewController: UIViewController {
             amountViewConfigurtion.initialValue = Decimal(string: initValueString)!
             amountViewConfigurtion.userNativeKeyboard = true
             amountViewConfigurtion.invalidDigitColor = self.hexStringToUIColor(hex: invalidColorString)
-            amountViewConfigurtion.normnalDigitColor = self.hexStringToUIColor(hex: normalColorString)
+            amountViewConfigurtion.normalDigitColor = self.hexStringToUIColor(hex: normalColorString)
         }
 
         return amountViewConfigurtion

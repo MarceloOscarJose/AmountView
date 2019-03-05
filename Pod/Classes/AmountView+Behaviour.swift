@@ -56,7 +56,7 @@ extension AmountView: UITextFieldDelegate {
         }
 
         if self.configuration.decimals > 0 && self.insertedDigits >= self.digits.count {
-            self.performMove(at: self.insertedDigits, to: self.insertedDigits)
+            self.moveDigits()
         }
     }
 
@@ -83,8 +83,12 @@ extension AmountView: UITextFieldDelegate {
             self.digits.insert("\(0)", at: insertZero - 1)
             self.performInsert(insertPath: insertZero)
 
-            self.performMove(at: self.insertedDigits, to: self.insertedDigits)
+            self.moveDigits()
         }
+    }
+
+    func moveDigits() {
+        self.performMove(at: self.insertedDigits, to: self.insertedDigits)
     }
 
     func updateCells() {

@@ -58,6 +58,8 @@ extension AmountView: UITextFieldDelegate {
         if self.configuration.decimals > 0 && self.insertedDigits >= self.digits.count {
             self.moveDigits()
         }
+
+        self.updatethousandSeparators()
     }
 
     public func deleteDigit() {
@@ -85,6 +87,39 @@ extension AmountView: UITextFieldDelegate {
 
             self.moveDigits()
         }
+
+        self.updatethousandSeparators()
+    }
+
+    func updatethousandSeparators() {
+
+        var position: Int = 0
+        self.digits.forEach({digit in
+            if digit == configuration.thousandSeparator {
+                self.digits.remove(at: position)
+                self.performDelete(deletePath: position + 1)
+                self.insertedDigits -= 1
+                position -= 1
+                self.moveDigits()
+            }
+
+            position += 1
+        })
+
+        let finalDigits = self.truncateAmount(amount: self.formatedAmount(amount: self.digits)).map({ String($0) })
+
+        position = 0
+        self.digits.forEach({digit in
+            if finalDigits[position] == configuration.thousandSeparator {
+                self.digits.insert(finalDigits[position], at: position)
+                self.performInsert(insertPath: position + 1)
+                self.insertedDigits += 1
+                position += 1
+                self.moveDigits()
+            }
+
+            position += 1
+        })
     }
 
     func moveDigits() {

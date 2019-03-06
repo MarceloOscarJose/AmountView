@@ -72,7 +72,9 @@ public class AmountView: UIView, AmountViewDelegate {
     }
 
     public func getAmount() -> Decimal {
-        return self.formatedAmount(amount: self.digits)
+        var beforeDigits = self.digits
+        beforeDigits.removeAll(where: {$0 == self.configuration.thousandSeparator})
+        return self.formatedAmount(amount: beforeDigits)
     }
 
     public func isMinValidAmount() -> Bool {
@@ -108,11 +110,11 @@ public class AmountView: UIView, AmountViewDelegate {
         return false
     }
 
-    fileprivate func truncateAmount(amount: Decimal) -> String {
+    func truncateAmount(amount: Decimal) -> String {
         let decimalPlaces: Int = self.configuration.decimals > 0 ? self.configuration.decimals + 1 : 0
 
         let formater = NumberFormatter()
-        formater.groupingSeparator = ""
+        formater.groupingSeparator = self.configuration.thousandSeparator
         formater.decimalSeparator = ""
         formater.numberStyle = .decimal
         formater.maximumFractionDigits = decimalPlaces

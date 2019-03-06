@@ -99,14 +99,11 @@ class MainViewController: UIViewController, AmountViewDelegate {
     }
 
     func didAppendDigit() {
-        print("Append digit")
     }
 
     func didDeleteDigit() {
-        print("Deleted digit")
     }
 
     func didEnterValidAmount() {
-        print("Amount is correct")
     }
 }

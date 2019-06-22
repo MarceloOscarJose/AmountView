@@ -55,10 +55,13 @@ class MainViewController: UIViewController, AmountViewDelegate {
             let invalidColorString = self.invalidColor.text,
             let normalColorString = self.normalColor.text {
 
+            let font = UIFont(name: "PoetsenOne-Regular", size: 120)
+            let fontScript = UIFont(name: "PoetsenOne-Regular", size: 60)
+
             amountViewConfigurtion.decimals = Int(decimalsText)!
             amountViewConfigurtion.maxDigitFontSize = CGFloat(Int(maxFontSizeText)!)
-            amountViewConfigurtion.digitFont = UIFont.systemFont(ofSize: 120, weight: .light)
-            amountViewConfigurtion.superScriptDigitFont = UIFont.systemFont(ofSize: 60, weight: .regular)
+            amountViewConfigurtion.digitFont = font
+            amountViewConfigurtion.superScriptDigitFont = fontScript
             amountViewConfigurtion.maxEnabledValue = Decimal(string: maxValueText)!
             amountViewConfigurtion.minEnabledValue = Decimal(string: minValueText)!
             amountViewConfigurtion.horizontalAlign = horizontalAlign.selectedSegmentIndex == 0 ? .center : horizontalAlign.selectedSegmentIndex == 1 ? .left : .right

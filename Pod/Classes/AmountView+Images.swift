@@ -10,7 +10,7 @@ import UIKit
 
 extension AmountView {
 
-    func calculateDigitSize(digit: String,font: UIFont, fontSize: CGFloat) -> CGSize {
+    func calculateDigitSize(digit: String, font: UIFont, fontSize: CGFloat) -> CGSize {
         return digit.size(withAttributes: [NSAttributedString.Key.font: UIFont(name: font.fontName, size: fontSize)!])
     }
 

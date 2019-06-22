@@ -28,7 +28,7 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9957E9DA248D119D27CFF567 /* Pods_AmountView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmountView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CC8E5B922BE5D0E0048424A /* PoetsenOne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "PoetsenOne-Regular.otf"; path = "AmountView/PoetsenOne-Regular.otf"; sourceTree = "<group>"; };
+		9CC8E5B922BE5D0E0048424A /* PoetsenOne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoetsenOne-Regular.otf"; sourceTree = "<group>"; };
 		AA8239CB959238BA077378C7 /* Pods-AmountView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmountView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmountView_Example/Pods-AmountView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B2EA02062934A534F4D07968 /* Pods_AmountView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmountView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8110C54391EF7106AA83073 /* Pods-AmountView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmountView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmountView_Tests/Pods-AmountView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -51,7 +51,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				9CC8E5B922BE5D0E0048424A /* PoetsenOne-Regular.otf */,
 				607FACF51AFB993E008FA782 /* Podspec */,
 				607FACD21AFB9204008FA782 /* Example */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -71,6 +70,7 @@
 		607FACD21AFB9204008FA782 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				9CC8E5B922BE5D0E0048424A /* PoetsenOne-Regular.otf */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				06F0F2AB21352D1B00660315 /* MainViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,

@@ -12,7 +12,7 @@ extension AmountView: UITextFieldDelegate {
 
     public func textField(_ textField: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
         if self.hiddenTextField == textField {
-            if string == "" {
+            if string.isEmpty {
                 self.deleteDigit()
             } else if let digit = Int(string) {
                 self.appendDigit(digit)

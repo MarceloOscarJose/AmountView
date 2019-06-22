@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AmountView: UIView, AmountViewDelegate {
+public class AmountView: UIView {
 
     public var delegate: AmountViewDelegate!
     var configuration: AmountViewConfiguration!
@@ -66,7 +66,7 @@ public class AmountView: UIView, AmountViewDelegate {
         self.hiddenTextField.text = stringAmount.description
 
         self.insertedDigits = 0
-        if !amount.isEqual(to: 0) {
+        if !amount.isZero {
             self.insertedDigits = self.digits.count
         }
     }
@@ -165,8 +165,11 @@ public class AmountView: UIView, AmountViewDelegate {
             self.validChars.append(digit.description)
         }
     }
+}
 
-    // Mark: Delegate
+// Mark: Delegate
+extension AmountView: AmountViewDelegate {
+
     public func didAppendDigit() {
         // Override on delegate
     }

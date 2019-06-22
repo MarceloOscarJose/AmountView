@@ -36,8 +36,7 @@ class AmountViewCollectionLayout: UICollectionViewFlowLayout {
         self.insertIndexPaths.removeAllObjects()
     }
 
-    override func initialLayoutAttributesForAppearingItem(
-        at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         var attributes: UICollectionViewLayoutAttributes? = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
 
         if self.insertIndexPaths.contains(itemIndexPath) {
@@ -51,8 +50,7 @@ class AmountViewCollectionLayout: UICollectionViewFlowLayout {
         return attributes
     }
 
-    override func finalLayoutAttributesForDisappearingItem(
-        at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         var attributes: UICollectionViewLayoutAttributes? = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
 
         if self.deleteIndexPaths.contains(itemIndexPath) {
@@ -60,10 +58,7 @@ class AmountViewCollectionLayout: UICollectionViewFlowLayout {
                 attributes = layoutAttributesForItem(at: itemIndexPath)
             }
 
-            var center = attributes!.center
-            center.y += 30
-
-            attributes!.center = center
+            attributes!.center.y = attributes!.center.y + 30
         }
 
         return attributes

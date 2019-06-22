@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     s.license          = 'none'
     s.platform         = :ios, '10.0'
     s.requires_arc     = true
-    s.swift_version    = '4.2'
+    s.swift_version    = '5'
 
     s.source_files = 'Pod/Classes/**/*'
     s.resources = ['Pod/*.xcassets']

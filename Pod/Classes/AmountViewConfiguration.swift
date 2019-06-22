@@ -9,6 +9,7 @@
 import UIKit
 
 open class AmountViewConfiguration: NSObject {
+
     public var verticalAlign: AmountViewVerticalAlign = .middle
     public var horizontalAlign: AmountViewHorizontalAlign = .center
     public var invalidAnimation: AmountViewInvalidAnimation = .shake
@@ -20,7 +21,7 @@ open class AmountViewConfiguration: NSObject {
     public var decimals: Int = 2
     public var initialValue: Decimal = 0
     public var minEnabledValue: Decimal = 0
-    public var maxEnabledValue: Decimal = 1000
+    public var maxEnabledValue: Decimal = 1_000_000
 
     public var maxDigitFontSize: CGFloat = 120
     public var digitFont: UIFont = UIFont.systemFont(ofSize: 120, weight: .light)

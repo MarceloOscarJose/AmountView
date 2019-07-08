@@ -136,20 +136,21 @@ public class AmountView: UIView {
 
         if self.configuration.userNativeKeyboard {
             self.hiddenTextField = UITextField()
+            self.hiddenTextField.textColor = UIColor.black
             self.hiddenTextField.delegate = self
             self.hiddenTextField.keyboardType = .decimalPad
             self.hiddenTextField.becomeFirstResponder()
-            self.addSubview(hiddenTextField)
+            digitsCollectionView.addSubview(hiddenTextField)
 
             digitsCollectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showKeyaboard)))
         }
     }
 
     fileprivate func setupConstraints() {
-        hiddenTextField.widthAnchor.constraint(equalToConstant: 1)
-        hiddenTextField.heightAnchor.constraint(equalToConstant: 1)
-        hiddenTextField.topAnchor.constraint(equalTo: self.topAnchor)
-        hiddenTextField.leftAnchor.constraint(equalTo: self.leftAnchor)
+        hiddenTextField.widthAnchor.constraint(equalToConstant: 300)
+        hiddenTextField.heightAnchor.constraint(equalToConstant: 50)
+        hiddenTextField.topAnchor.constraint(equalTo: digitsCollectionView.topAnchor)
+        hiddenTextField.leftAnchor.constraint(equalTo: digitsCollectionView.leftAnchor)
         digitsCollectionView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
     }
 

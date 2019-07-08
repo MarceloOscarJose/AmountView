@@ -82,12 +82,12 @@ extension AmountView: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         var insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
         if self.configuration.horizontalAlign == .center {
-            insets.left = (collectionView.frame.width - self.contentSize.width) / 2
-            insets.right = (collectionView.frame.width - self.contentSize.width) / 2
+            insets.left = (collectionView.frame.width - self.contentSize.width - 10) / 2
+            insets.right = (collectionView.frame.width - self.contentSize.width - 10) / 2
         } else if self.configuration.horizontalAlign == .left {
             insets.right = collectionView.frame.width - self.contentSize.width
         } else {
-            insets.left = collectionView.frame.width - self.contentSize.width
+            insets.left = collectionView.frame.width - self.contentSize.width - 20
         }
 
         if self.configuration.verticalAlign == .middle {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,6 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sq4-y0-z1p">
+                                <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d4F-RS-QGd">
                                 <rect key="frame" x="26" y="290" width="323" height="357"/>
                                 <subviews>
@@ -215,7 +219,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sq4-y0-z1p" secondAttribute="trailing" id="2h2-Zf-fhN"/>
+                            <constraint firstItem="d4F-RS-QGd" firstAttribute="top" secondItem="sq4-y0-z1p" secondAttribute="bottom" constant="20" id="4UJ-hJ-eWY"/>
                             <constraint firstItem="d4F-RS-QGd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="7Yd-EC-htx"/>
+                            <constraint firstItem="sq4-y0-z1p" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9J8-0X-PY1"/>
+                            <constraint firstItem="sq4-y0-z1p" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="B4L-iq-Xik"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="d4F-RS-QGd" secondAttribute="bottom" constant="20" id="ToN-Pg-jrp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d4F-RS-QGd" secondAttribute="trailing" constant="10" id="kFO-MF-hip"/>
                         </constraints>
@@ -227,6 +235,7 @@
                         <outlet property="horizontalAlign" destination="Gvs-6c-jgP" id="FWU-Mh-7pa"/>
                         <outlet property="initValue" destination="iq8-xE-gBi" id="ZkU-Vn-969"/>
                         <outlet property="invalidColor" destination="gEw-fQ-CTJ" id="BgX-si-k7U"/>
+                        <outlet property="mainView" destination="sq4-y0-z1p" id="7Cm-hO-T41"/>
                         <outlet property="maxFontSize" destination="mTu-7a-Oel" id="MPO-2W-oGE"/>
                         <outlet property="maxValue" destination="3A6-X9-NiZ" id="Ihb-KV-gkY"/>
                         <outlet property="minValue" destination="4kE-EP-nNF" id="Uke-Qp-Yy2"/>

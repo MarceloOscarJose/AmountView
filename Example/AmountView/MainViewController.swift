@@ -7,7 +7,6 @@
 //
 
 import AmountView
-import PureLayout
 
 class MainViewController: UIViewController, AmountViewDelegate {
 
@@ -24,20 +23,19 @@ class MainViewController: UIViewController, AmountViewDelegate {
     @IBOutlet weak var invalidColor: UITextField!
     @IBOutlet weak var normalColor: UITextField!
 
+    @IBOutlet weak var mainView: UIView!
     var amountView: AmountView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.amountView = AmountView(configuration: self.getConfigs())
-        self.view.addSubview(amountView)
+        self.mainView.addSubview(amountView)
 
-        amountView.autoPinEdge(.top, to: .top, of: self.view, withOffset: 0)
-        amountView.autoSetDimension(.width, toSize: self.view.frame.width)
-        amountView.autoPinEdge(.bottom, to: .top, of: configurationStack, withOffset: -20)
+        amountView.frame = self.mainView.frame
 
-        amountView.layer.borderWidth = 1
-        amountView.layer.borderColor = UIColor.black.cgColor
+        mainView.layer.borderWidth = 1
+        mainView.layer.borderColor = UIColor.black.cgColor
         applyButton.addTarget(self, action: #selector(appleyChanges), for: .touchUpInside)
 
         amountView.delegate = self

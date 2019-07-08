@@ -38,7 +38,9 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>PoetsenOne-Regular.otf</string>
+		<string>TTNorms-Bold.otf</string>
+		<string>TTNorms-Medium.otf</string>
+		<string>TTNorms-Regular.otf</string>
 	</array>
 </dict>
 </plist>

@@ -55,8 +55,8 @@ class MainViewController: UIViewController, AmountViewDelegate {
             let invalidColorString = self.invalidColor.text,
             let normalColorString = self.normalColor.text {
 
-            let font = UIFont(name: "PoetsenOne-Regular", size: 120)!
-            let fontScript = UIFont(name: "PoetsenOne-Regular", size: 60)!
+            let font = UIFont(name: "TTNorms-Regular", size: 120)!
+            let fontScript = UIFont(name: "TTNorms-Medium", size: 60)!
 
             amountViewConfigurtion.decimals = Int(decimalsText)!
             amountViewConfigurtion.maxDigitFontSize = CGFloat(Int(maxFontSizeText)!)

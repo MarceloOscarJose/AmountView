@@ -13,7 +13,9 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		9CC8E5BA22BE5D0E0048424A /* PoetsenOne-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9CC8E5B922BE5D0E0048424A /* PoetsenOne-Regular.otf */; };
+		9C8DFB8122D375DD005BFE95 /* TTNorms-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C8DFB7E22D375DD005BFE95 /* TTNorms-Regular.otf */; };
+		9C8DFB8222D375DD005BFE95 /* TTNorms-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C8DFB7F22D375DD005BFE95 /* TTNorms-Bold.otf */; };
+		9C8DFB8322D375DD005BFE95 /* TTNorms-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C8DFB8022D375DD005BFE95 /* TTNorms-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,9 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9957E9DA248D119D27CFF567 /* Pods_AmountView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmountView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CC8E5B922BE5D0E0048424A /* PoetsenOne-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoetsenOne-Regular.otf"; sourceTree = "<group>"; };
+		9C8DFB7E22D375DD005BFE95 /* TTNorms-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Regular.otf"; sourceTree = "<group>"; };
+		9C8DFB7F22D375DD005BFE95 /* TTNorms-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Bold.otf"; sourceTree = "<group>"; };
+		9C8DFB8022D375DD005BFE95 /* TTNorms-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTNorms-Medium.otf"; sourceTree = "<group>"; };
 		AA8239CB959238BA077378C7 /* Pods-AmountView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmountView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AmountView_Example/Pods-AmountView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B2EA02062934A534F4D07968 /* Pods_AmountView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmountView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8110C54391EF7106AA83073 /* Pods-AmountView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmountView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AmountView_Tests/Pods-AmountView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,7 +74,9 @@
 		607FACD21AFB9204008FA782 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				9CC8E5B922BE5D0E0048424A /* PoetsenOne-Regular.otf */,
+				9C8DFB7F22D375DD005BFE95 /* TTNorms-Bold.otf */,
+				9C8DFB8022D375DD005BFE95 /* TTNorms-Medium.otf */,
+				9C8DFB7E22D375DD005BFE95 /* TTNorms-Regular.otf */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				06F0F2AB21352D1B00660315 /* MainViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -183,10 +189,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CC8E5BA22BE5D0E0048424A /* PoetsenOne-Regular.otf in Resources */,
+				9C8DFB8222D375DD005BFE95 /* TTNorms-Bold.otf in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				9C8DFB8122D375DD005BFE95 /* TTNorms-Regular.otf in Resources */,
+				9C8DFB8322D375DD005BFE95 /* TTNorms-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

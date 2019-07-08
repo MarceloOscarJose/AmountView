@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sq4-y0-z1p">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sq4-y0-z1p" customClass="AmountView" customModule="AmountView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -229,13 +229,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountView" destination="sq4-y0-z1p" id="7r3-Uj-c2O"/>
                         <outlet property="applyButton" destination="vAQ-OD-nbq" id="iiw-cH-FUi"/>
                         <outlet property="configurationStack" destination="d4F-RS-QGd" id="LGe-ub-bzX"/>
                         <outlet property="decimals" destination="y8x-f8-12E" id="gsh-pM-9ia"/>
                         <outlet property="horizontalAlign" destination="Gvs-6c-jgP" id="FWU-Mh-7pa"/>
                         <outlet property="initValue" destination="iq8-xE-gBi" id="ZkU-Vn-969"/>
                         <outlet property="invalidColor" destination="gEw-fQ-CTJ" id="BgX-si-k7U"/>
-                        <outlet property="mainView" destination="sq4-y0-z1p" id="7Cm-hO-T41"/>
                         <outlet property="maxFontSize" destination="mTu-7a-Oel" id="MPO-2W-oGE"/>
                         <outlet property="maxValue" destination="3A6-X9-NiZ" id="Ihb-KV-gkY"/>
                         <outlet property="minValue" destination="4kE-EP-nNF" id="Uke-Qp-Yy2"/>

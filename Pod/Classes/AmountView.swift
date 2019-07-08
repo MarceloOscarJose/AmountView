@@ -30,10 +30,9 @@ public class AmountView: UIView {
     var hiddenTextField: UITextField!
     var digitsCollectionView: AmountViewCollectionVIew!
 
-    public convenience init(configuration: AmountViewConfiguration) {
+    public convenience init() {
         self.init(frame: .zero)
         self.delegate = self
-        self.loadConfiguration(configuration: configuration)
     }
 
     public func loadConfiguration(configuration: AmountViewConfiguration) {
@@ -148,15 +147,15 @@ public class AmountView: UIView {
     }
 
     fileprivate func setupConstraints() {
-        digitsCollectionView.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0).isActive = true
-        digitsCollectionView.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
-        digitsCollectionView.leftAnchor.constraint(equalToSystemSpacingAfter: self.leftAnchor, multiplier: 0).isActive = true
-        digitsCollectionView.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
+        digitsCollectionView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        digitsCollectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        digitsCollectionView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
+        digitsCollectionView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
 
-        /*hiddenTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        hiddenTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
         hiddenTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        hiddenTextField.topAnchor.constraint(equalToSystemSpacingBelow: digitsCollectionView.topAnchor, multiplier: 0).isActive = true
-        hiddenTextField.leftAnchor.constraint(equalToSystemSpacingAfter: digitsCollectionView.leftAnchor, multiplier: 0).isActive = true*/
+        hiddenTextField.topAnchor.constraint(equalTo: digitsCollectionView.topAnchor, constant: 10).isActive = true
+        hiddenTextField.leftAnchor.constraint(equalTo: digitsCollectionView.leftAnchor, constant: 10).isActive = true
     }
 
     @objc fileprivate func showKeyaboard() {

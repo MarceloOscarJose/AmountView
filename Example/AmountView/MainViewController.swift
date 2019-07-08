@@ -10,6 +10,8 @@ import AmountView
 
 class MainViewController: UIViewController, AmountViewDelegate {
 
+    @IBOutlet weak var amountView: AmountView!
+
     @IBOutlet weak var configurationStack: UIStackView!
     @IBOutlet weak var minValue: UITextField!
     @IBOutlet weak var maxValue: UITextField!
@@ -17,25 +19,19 @@ class MainViewController: UIViewController, AmountViewDelegate {
     @IBOutlet weak var maxFontSize: UITextField!
     @IBOutlet weak var decimals: UITextField!
     @IBOutlet weak var prefix: UITextField!
-    @IBOutlet weak var applyButton: UIButton!
     @IBOutlet weak var verticalAlign: UISegmentedControl!
     @IBOutlet weak var horizontalAlign: UISegmentedControl!
     @IBOutlet weak var invalidColor: UITextField!
     @IBOutlet weak var normalColor: UITextField!
 
-    @IBOutlet weak var mainView: UIView!
-    var amountView: AmountView!
+    @IBOutlet weak var applyButton: UIButton!
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)  
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        self.amountView = AmountView(configuration: self.getConfigs())
-        self.mainView.addSubview(amountView)
-
-        amountView.frame = self.mainView.frame
-
-        mainView.layer.borderWidth = 1
-        mainView.layer.borderColor = UIColor.black.cgColor
+        amountView.loadConfiguration(configuration: self.getConfigs())
+        amountView.layer.borderWidth = 1
+        amountView.layer.borderColor = UIColor.black.cgColor
         applyButton.addTarget(self, action: #selector(appleyChanges), for: .touchUpInside)
 
         amountView.delegate = self

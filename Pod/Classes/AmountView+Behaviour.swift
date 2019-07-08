@@ -59,7 +59,7 @@ extension AmountView: UITextFieldDelegate {
             self.moveDigits()
         }
 
-        self.updatethousandSeparators()
+        //self.updatethousandSeparators()
     }
 
     public func deleteDigit() {
@@ -88,7 +88,7 @@ extension AmountView: UITextFieldDelegate {
             self.moveDigits()
         }
 
-        self.updatethousandSeparators()
+        //self.updatethousandSeparators()
     }
 
     func updatethousandSeparators() {

@@ -137,6 +137,7 @@ public class AmountView: UIView {
         if self.configuration.userNativeKeyboard {
             self.hiddenTextField = UITextField()
             self.hiddenTextField.textColor = UIColor.black
+            self.hiddenTextField.backgroundColor = UIColor.gray
             self.hiddenTextField.delegate = self
             self.hiddenTextField.keyboardType = .decimalPad
             self.hiddenTextField.becomeFirstResponder()
@@ -147,11 +148,15 @@ public class AmountView: UIView {
     }
 
     fileprivate func setupConstraints() {
-        hiddenTextField.widthAnchor.constraint(equalToConstant: 300)
-        hiddenTextField.heightAnchor.constraint(equalToConstant: 50)
-        hiddenTextField.topAnchor.constraint(equalTo: digitsCollectionView.topAnchor)
-        hiddenTextField.leftAnchor.constraint(equalTo: digitsCollectionView.leftAnchor)
-        digitsCollectionView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        digitsCollectionView.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0).isActive = true
+        digitsCollectionView.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
+        digitsCollectionView.leftAnchor.constraint(equalToSystemSpacingAfter: self.leftAnchor, multiplier: 0).isActive = true
+        digitsCollectionView.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
+
+        /*hiddenTextField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        hiddenTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        hiddenTextField.topAnchor.constraint(equalToSystemSpacingBelow: digitsCollectionView.topAnchor, multiplier: 0).isActive = true
+        hiddenTextField.leftAnchor.constraint(equalToSystemSpacingAfter: digitsCollectionView.leftAnchor, multiplier: 0).isActive = true*/
     }
 
     @objc fileprivate func showKeyaboard() {

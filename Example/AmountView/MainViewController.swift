@@ -26,8 +26,8 @@ class MainViewController: UIViewController, AmountViewDelegate {
     @IBOutlet weak var mainView: UIView!
     var amountView: AmountView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)  
 
         self.amountView = AmountView(configuration: self.getConfigs())
         self.mainView.addSubview(amountView)

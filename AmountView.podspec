@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
 
     s.source           = { :git => "git@github.com:MarceloOscarJose/AmountView.git", :tag => s.version.to_s}
     s.license          = 'none'
-    s.platform         = :ios, '10.0'
+    s.platform         = :ios, '11.0'
     s.requires_arc     = true
     s.swift_version    = '5'
 
